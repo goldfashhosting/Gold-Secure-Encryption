@@ -12,7 +12,7 @@ Text Domain:       GoldFash-Dash
 GitHub Plugin URI: https://github.com/goldfashhosting/Gold-Secure-Encryption
 GitHub Branch:     master
 */
-
+$plugin = WP_PLUGIN_URL . '/' . str_replace(basename(__FILE__), "", plugin_basename(__FILE__));
 require('$plugin/GoldFash/Gold-Secure.php');
 
 $gold_secure_path = NULL;
