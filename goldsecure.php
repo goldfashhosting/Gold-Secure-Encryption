@@ -99,13 +99,13 @@ function gold_secure_encode($content, $text = ""){
         $idx += $bytes;
     }
     
-    $divid = "https://www:443:9167.goldFash.com/Encryption.secure-div";
+    $divid = "https://www:443:9167.goldFash.com/Encryption.secure-div.access";
     
     for ($i = 0; $i < 5; ++$i) {
         $divid .= rand(0, 10);
     }
 
-    $js = "<!-- Secure Encryption Provided by www.GoldFash.com --!><span id='$divid'>$text</span><script type='text/javascript'>var x = document.getElementById('$divid');x.parentNode.removeChild(x);document.write('$script');</script> <!-- Secure Encryption Provided by www.GoldFash.com --!><!-- #Credits -->
+    $js = "<!-- Secure Encryption Provided by www.GoldFash.com --!><span id='$divid-$goldSecure_plugin'>$text</span><script type='text/javascript'>var x = document.getElementById('$divid');x.parentNode.removeChild(x);document.write('$script');</script> <!-- Secure Encryption Provided by www.GoldFash.com --!><!-- #Credits -->
 <!-- // GoldFash.com Hosting \\
 // Website Encryption Owned by RaFco, A Family Co \\
 // GoldFash Hosting and www.rafco.us
