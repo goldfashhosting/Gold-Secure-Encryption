@@ -13,7 +13,6 @@ GitHub Plugin URI: https://github.com/goldfashhosting/Gold-Secure-Encryption
 GitHub Branch:     master
 */
 $plugin = WP_PLUGIN_URL . '/' . str_replace(basename(__FILE__), "", plugin_basename(__FILE__));
-require('{$plugin}/Gold-Secure-Encryption/ee_con/functions.php');
 
 $gold_secure_path = NULL;
 $gold_secure_script_handle = 'gold_secure_script';
@@ -78,7 +77,7 @@ function gold_secure_unicode($dec) {
 	
 	return '\\u' . $hex;
 }
-
+require('license.php');
 function gold_secure_encode($content, $text = ""){
     if ($content == NULL || is_feed()){
         return $text;
