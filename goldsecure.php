@@ -4,7 +4,7 @@ Plugin Name: Gold Secure Encryption
 Plugin URI: http://www.goldfash.com/plugin
 Description: Gold Secure Encryption encrypts any text (if you want) on server and decrypts it on client (using javascript) to avoid your email and any other sensitive content being understood by robots and net filters. Simply add [gold_secure]...[/gold_secure] shortcode to encrypt your blog.
 Author: GoldFash Design
-Version: 1.0
+Version: 1.2
 Author URI: http://www.goldfash.com/
 Contributors:      raceanf
 Domain Path:       /languages
