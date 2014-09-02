@@ -117,7 +117,6 @@ function gold_secure_encode($content, $text = ""){
     
     return $js;
 }
-require('license.php');
 function gold_secure_process($attr, $content = NULL){
     extract(
         shortcode_atts(
@@ -129,5 +128,42 @@ function gold_secure_process($attr, $content = NULL){
     );
     return gold_secure_encode($content, $text);
 }
+
+/*
+|--------------------------------------------------------------------------
+| MAIN CLASS
+|--------------------------------------------------------------------------
+*/
+
+class golde_exyaudju_aij_o {
+ 
+	/*--------------------------------------------*
+	 * Constructor
+	 *--------------------------------------------*/
+ 
+	/**
+	 * Initializes the plugin by setting localization, filters, and administration functions.
+	 */
+	function __construct() {
+	
+		add_action('admin_menu', array( &$this,'rce_scd_register_menu') );
+		
+	} // end constructor
+ 
+	
+	
+	function rce_scd_register_menu() {
+		add_dashboard_page( 'GoldFash Secure', 'GoldFash Secure', 'read', 'GoldFash-sech', array( &$this,'rce_scd_create_dashboard') );
+	}
+	
+	function rce_scd_create_dashboard() {
+		include_once( 'license.php'  );
+	}
+
+ 
+}
+ 
+// instantiate plugin's class
+$GLOBALS['ge_dashboard'] = new golde_exyaudju_aij_o();
 
 ?>
