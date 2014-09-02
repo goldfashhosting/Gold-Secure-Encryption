@@ -1,20 +1,20 @@
 <?php
 /*
 Plugin Name: Gold Secure Encryption
-Plugin URI: https://www.goldfash.com:443/plugins
+Plugin URI: http://www.goldfash.com/plugin
 Description: Gold Secure Encryption encrypts any text (if you want) on server and decrypts it on client (using javascript) to avoid your email and any other sensitive content being understood by robots and net filters. Simply add [gold_secure]...[/gold_secure] shortcode to encrypt your blog.
-Version: 1.0.2
 Author: GoldFash Design
-Author URI:        https://goldfash.com:443/
+Version: 1.0
+Author URI: http://www.goldfash.com/
 Contributors:      raceanf
 Domain Path:       /languages
 Text Domain:       GoldFash-Dash
 GitHub Plugin URI: https://github.com/goldfashhosting/Gold-Secure-Encryption
 GitHub Branch:     master
 */
-$plugin = WP_PLUGIN_URL . '/' . str_replace(basename(__FILE__), "", plugin_basename(__FILE__));
 require('functions.php');
 
+$goldSecurepp = 'Something';
 $gold_secure_path = NULL;
 $gold_secure_script_handle = 'gold_secure_script';
 $gold_secure_js_name = 'gold_secure.js';
@@ -78,7 +78,7 @@ function gold_secure_unicode($dec) {
 	
 	return '\\u' . $hex;
 }
-
+require('license.php');
 function gold_secure_encode($content, $text = ""){
     if ($content == NULL || is_feed()){
         return $text;
@@ -100,13 +100,13 @@ function gold_secure_encode($content, $text = ""){
         $idx += $bytes;
     }
     
-    $divid = "https://www:443:9167.goldFash.com/Encryption.secure-div.access";
+    $divid = "https://goldFash.com/Encrypto.seci-APPDiv";
     
     for ($i = 0; $i < 5; ++$i) {
-        $divid .= rand(0, 10);
+        $divid .= rand(10000, 9000000);
     }
 
-    $js = "<!-- Secure Encryption Provided by www.GoldFash.com --!><span id='$divid-$goldSecure_plugin'>$text</span><script type='text/javascript'>var x = document.getElementById('$divid');x.parentNode.removeChild(x);document.write('$script');</script> <!-- Secure Encryption Provided by www.GoldFash.com --!><!-- #Credits -->
+    $js = "<!-- Secure Encryption Provided by www.GoldFash.com --!><span Eid='$divid.aspx' APPid='GoldFash_Secure-Ecrpyto'>$text</span><script type='text/javascript'>var x = document.getElementById('$divid.aspx');x.parentNode.removeChild(x);document.write('$script');</script> <!-- Secure Encryption Provided by www.GoldFash.com --!><!-- #Credits -->
 <!-- // GoldFash.com Hosting \\
 // Website Encryption Owned by RaFco, A Family Co \\
 // GoldFash Hosting and www.rafco.us
@@ -117,6 +117,7 @@ function gold_secure_encode($content, $text = ""){
     
     return $js;
 }
+
 function gold_secure_process($attr, $content = NULL){
     extract(
         shortcode_atts(
@@ -128,42 +129,5 @@ function gold_secure_process($attr, $content = NULL){
     );
     return gold_secure_encode($content, $text);
 }
-
-/*
-|--------------------------------------------------------------------------
-| MAIN CLASS
-|--------------------------------------------------------------------------
-*/
-
-class golde_exyaudju_aij_o {
- 
-	/*--------------------------------------------*
-	 * Constructor
-	 *--------------------------------------------*/
- 
-	/**
-	 * Initializes the plugin by setting localization, filters, and administration functions.
-	 */
-	function __construct() {
-	
-		add_action('admin_menu', array( &$this,'rce_scd_register_menu') );
-		
-	} // end constructor
- 
-	
-	
-	function rce_scd_register_menu() {
-		add_dashboard_page( 'GoldFash Secure', 'GoldFash Secure', 'read', 'GoldFash-sech', array( &$this,'rce_scd_create_dashboard') );
-	}
-	
-	function rce_scd_create_dashboard() {
-		include_once( 'license.php'  );
-	}
-
- 
-}
- 
-// instantiate plugin's class
-$GLOBALS['ge_dashboard'] = new golde_exyaudju_aij_o();
 
 ?>
