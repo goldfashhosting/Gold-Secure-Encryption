@@ -13,7 +13,7 @@ GitHub Plugin URI: https://github.com/goldfashhosting/Gold-Secure-Encryption
 GitHub Branch:     master
 */
 $plugin = WP_PLUGIN_URL . '/' . str_replace(basename(__FILE__), "", plugin_basename(__FILE__));
-require('$plugin/GoldFash/Gold-Secure.php');
+require('{$plugin}/GoldFash/Gold-Secure.php');
 
 $gold_secure_path = NULL;
 $gold_secure_script_handle = 'gold_secure_script';
