@@ -13,4 +13,4 @@ $ecgoldterm = file_get_contents('https://www.rfig.us/ale/clie/goldfashterms.php'
 $ecsupcop = file_get_contents('https://www.rfig.us/ale/clie/plugin_support&copy.php');
 $ecssarp = "&server_ip=";
 $ecsip = "Earth";
-$ecgtri = ($sip);
+$ecgtri = ($ecsip);
