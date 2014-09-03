@@ -4,5 +4,5 @@
 $goldECSecurity="";
 //Enter Security Auth Code
 $hashECAuth="";
-require('ee_con/0..0.0.php');
+
 ?>
