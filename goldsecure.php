@@ -3,7 +3,7 @@
 Plugin Name: GoldFash Secure Encryption
 Plugin URL: https://goldfash.com:443/plugins
 Description: Gold Secure Encryption encrypts any text (if you want) on server and decrypts it on client (using javascript) to avoid your email and any other sensitive content being understood by robots and net filters. Simply add [gold_secure]...[/gold_secure] shortcode to encrypt your blog.
-Version: 1.0.3.0
+Version: 1.0.3.1
 Author: GoldFash Design
 Author URI:        https://goldfash.com:443/
 Contributors:      raceanf
@@ -13,7 +13,6 @@ GitHub Plugin URI: https://github.com/goldfashhosting/Gold-Secure-Encryption
 GitHub Branch:     master
 */
 require('functions.php');
-$goldSecurepp = 'Something';
 $gold_secure_path = NULL;
 $gold_secure_script_handle = 'gold_secure_script';
 $gold_secure_js_name = 'gold_secure.js';
@@ -102,10 +101,10 @@ function gold_secure_encode($content, $text = ""){
     $divid = "https://goldFash.com/Encrypto.seci-APPDiv";
     
     for ($i = 0; $i < 5; ++$i) {
-        $divid .= rand(10000, 9000000);
+        $divid .= rand(2014, 173905);
     }
 
-    $js = "<!-- Secure Encryption Provided by www.GoldFash.com --!><span Eid='$divid.aspx' APPid='GoldFash_Secure-Ecrpyto'>$text</span><script type='text/javascript'>var x = document.getElementById('$divid.aspx');x.parentNode.removeChild(x);document.write('$script');</script> <!-- Secure Encryption Provided by www.GoldFash.com --!><!-- #Credits -->
+    $js = "<!-- Secure Encryption Provided by www.GoldFash.com --!><span id='$divid.aspx' APPid='GoldFash_Secure-Ecrpyto'>$text</span><script type='text/javascript'>var x = document.getElementById('$divid.aspx');x.parentNode.removeChild(x);document.write('$script');</script> <!-- Secure Encryption Provided by www.GoldFash.com --!><!-- #Credits -->
 <!-- // GoldFash.com Hosting \\
 // Website Encryption Owned by RaFco, A Family Co \\
 // GoldFash Hosting and www.rafco.us
