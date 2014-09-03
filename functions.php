@@ -13,4 +13,4 @@ function my_github_plugin_updater() {
 		'slug'	=> 'GoldFash-Secure-Encryption/goldsecure.php', // defaults to the repo value ('repo/repo.php')
 	) );
 }
-add_action( 'plugins_loaded', 'my_github_plugin_updater' );
+
