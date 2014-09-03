@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: GoldFash Encrypto Lite
+Plugin Name: GoldFash Secure Encryption
 Plugin URL: https://goldfash.com:443/plugins
 Description: Gold Secure Encryption encrypts any text (if you want) on server and decrypts it on client (using javascript) to avoid your email and any other sensitive content being understood by robots and net filters. Simply add [gold_secure]...[/gold_secure] shortcode to encrypt your blog.
 Version: 1.0.3.0
