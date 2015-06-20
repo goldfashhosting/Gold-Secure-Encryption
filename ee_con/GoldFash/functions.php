@@ -1,7 +1,7 @@
 <?php
-$ecargs = "https://www.rfig.us/A-GOLD/plugin.stream/";
-$ecmecaG = "cx.VERF./G";
-$ecbgaz = "eT/e.X.5/api/index.php?mod=lic";
+$ecargs = "http://plugins.goldfash.com/";
+$ecmecaG = "v2.0/";
+$ecbgaz = "/api/index.php?mod=lic";
 $eczabe = "ense&task=SPBAS_validate_license&license_";
 $ecxzta = "key=";
 $ecsssr = "&server_hostname=";
