@@ -1,11 +1,11 @@
 (function() {
-  function GoldSecure() { }
+  function Enigma() { }
 
-  GoldSecure.prototype.GetValue = function(element) {
-    return jQuery(element).attr('gold-emav');
+  Enigma.prototype.GetValue = function(element) {
+    return jQuery(element).attr('data-enigmav');
   };
   
-  GoldSecure.prototype.Replace = function(element) {
+  Enigma.prototype.Replace = function(element) {
     var value = this.GetValue(element);
     if (!value) {
       return;
@@ -13,23 +13,23 @@
     jQuery(element).replaceWith(jQuery.parseJSON('"' + value + '"'));
   };
   
-  GoldSecure.prototype.Clickable = function(element) {
-    var thisGoldSecure = this;
+  Enigma.prototype.Clickable = function(element) {
+    var thisEnigma = this;
     var text = jQuery(element).text();
     var link = jQuery("<a />", {
       href : "#",
       text : text,
-      'gold-emav' : this.GetValue(element)
+      'data-enigmav' : this.GetValue(element)
     });
     jQuery(element).replaceWith(link);
     jQuery(link).on('click', function() {
-      thisGoldSecure.Replace(link);
-      thisGoldSecure.PostGAEvent('GoldSecure', text, 'Click', 1);
+      thisEnigma.Replace(link);
+      thisEnigma.PostGAEvent('Enigma', text, 'Click', 1);
       return false;
     });
   };
   
-  GoldSecure.prototype.PostGAEvent = function(category, label, action, value) {
+  Enigma.prototype.PostGAEvent = function(category, label, action, value) {
     if (typeof Leona !== 'undefined' && Leona.analytics) {
       var aData = Leona.analytics.getCoreData();
       aData.t = 'event';
@@ -41,7 +41,7 @@
     }
   };
   
-  GoldSecure.prototype.IfReplied = function(element) {
+  Enigma.prototype.IfReplied = function(element) {
     var pattern = /comment_author_[^=]*=([^;]+);/g;
     var cookie = document.cookie;
     var nameCap = [];
@@ -69,20 +69,20 @@
     }
   };
   
-  GoldSecure.prototype.Run = function() {
-    var thisGoldSecure = this;
-    jQuery('span[id^="https://goldFash.com/Encrypto.seci-APPDiv"]').each(function(idx, element) {
-      if (jQuery(element).attr('gold-emad') === 'y') {
-        return thisGoldSecure.Clickable(element);
-      } else if (jQuery(element).attr('gold-emad') === 'replied') {
-        return thisGoldSecure.IfReplied(element);
+  Enigma.prototype.Run = function() {
+    var thisEnigma = this;
+    jQuery('span[id^="engimadiv"]').each(function(idx, element) {
+      if (jQuery(element).attr('data-enigmad') === 'y') {
+        return thisEnigma.Clickable(element);
+      } else if (jQuery(element).attr('data-enigmad') === 'replied') {
+        return thisEnigma.IfReplied(element);
       }
-      thisGoldSecure.Replace(element);
+      thisEnigma.Replace(element);
     });
   };
   
   jQuery(function() {
-    new GoldSecure().Run();
-    setInterval(function() { new GoldSecure().Run();}, 2000);
+    new Enigma().Run();
+    setInterval(function() { new Enigma().Run();}, 2000);
   });
 })();
