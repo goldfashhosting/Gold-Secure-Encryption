@@ -13,30 +13,28 @@ GitHub Plugin URI: https://github.com/goldfashhosting/Gold-Secure-Encryption
 GitHub Branch:     master
 */
 
-$gold_secure_script_handle = 'gold_secure_script';
-$gold_secure_js_name = 'gold_secure.js';
+$enigma_script_handle = 'engima_script';
+$enigma_js_name = 'goldsecure.js';
 
-add_action('init', 'gold_secure_init');
-
-add_shortcode('gold_secure', 'gold_secure_process');
-
-function gold_secure_init(){
-    global $gold_secure_js_name;
-    global $gold_secure_script_handle;
+add_action('init', 'enigma_init');
 
 add_shortcode('enigma', 'enigma_process');
 
+function enigma_init(){
+  global $enigma_js_name;
+  global $enigma_script_handle;
+
   if (!is_admin()) {
     wp_enqueue_script(
-      $gold_secure_handle,
-      plugins_url( $gold_secure_js_name , __FILE__ ),
+      $enigma_script_handle,
+      plugins_url( $enigma_js_name , __FILE__ ),
       array( 'jquery' ),
       false,
       true);
   }
 }
 
-function gold_secure__ord($str, $len = -1, $idx = 0, &$bytes = 0){
+function enigma_ord($str, $len = -1, $idx = 0, &$bytes = 0){
   if ($len == -1){
     $len = strlen(str);
   }
@@ -63,11 +61,11 @@ function gold_secure__ord($str, $len = -1, $idx = 0, &$bytes = 0){
   return false;
 }
 
-function gold_secure__unicode($dec) {
+function enigma_unicode($dec) {
   return '\\u' . str_pad(dechex($dec), 4, '0', STR_PAD_LEFT);
 }
 
-function gold_secure_encode($content, $text, $ondemand) {
+function enigma_encode($content, $text, $ondemand) {
   if ($content == NULL || is_feed()){
     return $text;
   }
@@ -80,27 +78,21 @@ function gold_secure_encode($content, $text, $ondemand) {
 
   $idx = 0;
 
-  $ord = gold_secure_ord($content, $len, $idx, $idx);
-  $script = gold_secure_unicode($ord);
+  $ord = enigma_ord($content, $len, $idx, $idx);
+  $script = enigma_unicode($ord);
   while ($idx < $len) {
     $bytes = 0;
-    $script .= gold_secure_unicode(gold_secure_ord($content, $len, $idx, $bytes));
+    $script .= enigma_unicode(enigma_ord($content, $len, $idx, $bytes));
     $idx += $bytes;
   }
 
-  $divid = uniqid("https://goldFash.com/Encrypto.seci-APPDiv");
-  $js = "<span id='$divid' gold-emav='$script' gold-emad='$ondemand'>$text</span>
-<!-- // GoldFash.com Web Hosting \\
-// Website Encryption Owned by RaFco, A Family Co \\
-// GoldFash Hosting and www.rafco.us
-// © RaFco|AFC - RFIG|AFC - GoldFash \\
-// CEO - Racean Ford | facebook.com/racean.ford | facebook.com/rafcoafc \\ --!>
-<!-- www.goldfash.com --!>";
+  $divid = uniqid("engimadiv");
+  $js = "<span id='$divid' data-enigmav='$script' data-enigmad='$ondemand'>$text</span>";
 
   return $js;
 }
 
-function gold_secure_process($attr, $content = NULL) {
+function enigma_process($attr, $content = NULL) {
   extract(
     shortcode_atts(
       array(
@@ -109,7 +101,7 @@ function gold_secure_process($attr, $content = NULL) {
       ),
     $attr)
   );
-  return gold_secure_encode($content, $text, $ondemand);
+  return enigma_encode($content, $text, $ondemand);
 }
 
 ?>
